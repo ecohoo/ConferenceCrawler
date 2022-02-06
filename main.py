@@ -25,7 +25,7 @@ if __name__ == '__main__':
         "include": {
             "text",
             "classification",
-            "cross"
+            "domain"
         },
         "exclude": {}
     }
