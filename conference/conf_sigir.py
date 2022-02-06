@@ -4,7 +4,7 @@ import time
 
 class SIGIR(BaseConference):
     def url(self):
-        if self.__year__ is 2020:
+        if self.__year__ == 2020:
             return "https://dl.acm.org/doi/proceedings/10.1145/3397271"
         return "https://dl.acm.org/doi/proceedings/10.1145/3404835"
 

@@ -3,7 +3,7 @@ from conference.base_conference import BaseConference
 
 class ICML(BaseConference):
     def url(self):
-        if self.__year__ is 2020:
+        if self.__year__ == 2020:
             return "http://proceedings.mlr.press/v119/"
         return "http://proceedings.mlr.press/v139/"
 

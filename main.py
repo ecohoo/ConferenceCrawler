@@ -20,12 +20,12 @@ if __name__ == '__main__':
         },
         "download_paper": True,
         "download_path": "build/conference",
-        "clear_download_path": False,
+        "clear_download_path": True,
         "thread_pool_size": 5,
         "include": {
             "text",
             "classification",
-            "few"
+            "cross"
         },
         "exclude": {}
     }

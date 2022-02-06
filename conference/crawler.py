@@ -1,3 +1,6 @@
+import shutil
+import os
+
 from conference.conf_acl import ACL
 from conference.conf_naacl import NAACL
 from conference.conf_emnlp import EMNLP
@@ -9,7 +12,6 @@ from conference.conf_sigir import SIGIR
 from conference.conf_wsdm import WSDM
 from conference.conf_www import WWW
 from concurrent.futures import ThreadPoolExecutor, wait
-import os
 
 
 def get_conf(conf_name):
@@ -36,6 +38,8 @@ def crawl(config):
             print("[ERR] ", conf_name, " not exist!")
             continue
         for year in config['year']:
+            if conf_name is "NAACL" and year == 2020:
+                continue
             conferences.append(
                 conf(year,
                      config['download_paper'],
@@ -43,8 +47,8 @@ def crawl(config):
                      config['include'],
                      config['exclude']))
 
-    if config["clear_download_path"]:
-        os.rmdir(config['download_path'])
+    if config["clear_download_path"] and os.path.exists(config['download_path']):
+        shutil.rmtree(config['download_path'])
 
     with ThreadPoolExecutor(max_workers=config['thread_pool_size']) as t:
         all_task = [t.submit(conference.crawl) for conference in conferences]

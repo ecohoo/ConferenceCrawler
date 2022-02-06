@@ -8,7 +8,7 @@ import requests
 
 class BaseConference(object):
     def __init__(self, year, download_paper, download_path, include, exclude):
-        self.__year__ = str(year)
+        self.__year__ = year
         self.__driver__ = None
         self.__links__ = []
         self.__titles__ = []
@@ -25,7 +25,7 @@ class BaseConference(object):
             print("[ERR] ", self.get_conference_name(), " url is None!")
 
     def get_conference_name(self):
-        return self.__class__.__name__ + self.__year__
+        return self.__class__.__name__ + str(self.__year__)
 
     def retrieve(self):
         return None, None
