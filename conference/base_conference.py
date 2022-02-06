@@ -40,13 +40,13 @@ class BaseConference(object):
     def crawl(self):
         self.__init_driver__()
         self.retrieve()
+        self.quit()
         if self.__download_paper__:
             if len(self.__links__) > 0:
                 os.makedirs(self.__root__, exist_ok=True)
             for i, link in enumerate(self.__links__):
                 self.download(self.__titles__[i], link)
                 time.sleep(random.uniform(4, 5))
-        self.quit()
 
     def download(self, title, link):
         headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:57.0) Gecko/20100101 Firefox/57.0'}
