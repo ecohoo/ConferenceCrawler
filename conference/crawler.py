@@ -11,6 +11,7 @@ from conference.conf_nips import NeurIPS
 from conference.conf_sigir import SIGIR
 from conference.conf_wsdm import WSDM
 from conference.conf_www import WWW
+from conference.conf_colt import COLT
 from concurrent.futures import ThreadPoolExecutor, wait
 
 
@@ -25,7 +26,8 @@ def get_conf(conf_name):
         "NeurIPS": NeurIPS,
         "SIGIR": SIGIR,
         "WSDM": WSDM,
-        "WWW": WWW
+        "WWW": WWW,
+        "COLT": COLT,
     }
     return conference.get(conf_name, None)
 

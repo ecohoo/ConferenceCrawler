@@ -3,16 +3,10 @@ from conference import crawler
 if __name__ == '__main__':
     config = {
         "conference": {
-            "ACL",
-            "NAACL",
-            "EMNLP",
             "ICLR",
             "ICML",
-            "KDD",
             "NeurIPS",
-            "SIGIR",
-            "WSDM",
-            "WWW"
+            "COLT"
         },
         "year": {
             2020,
@@ -23,9 +17,8 @@ if __name__ == '__main__':
         "clear_download_path": True,
         "thread_pool_size": 5,
         "include": {
-            "text",
-            "classification",
-            "domain"
+
+            "classif"
         },
         "exclude": {}
     }
