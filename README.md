@@ -42,3 +42,5 @@ config = {
 "thread_pool_size": the thread pool size for concurrent operation.  
 "include": the keywords for search papers.  
 "exclude": do not include these keywords when search papers.
+
+chromedriver.exe download path：http://chromedriver.storage.googleapis.com/index.html
